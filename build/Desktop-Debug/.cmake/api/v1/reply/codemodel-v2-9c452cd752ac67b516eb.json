@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-c096c87cb91b1230e08c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Memoriavirtual",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Memoriavirtual::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Memoriavirtual-Debug-f3b8f3eb457e2008fed5.json",
+					"name" : "Memoriavirtual",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Memoriavirtual_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Memoriavirtual_autogen-Debug-a21ed6182a254acc613d.json",
+					"name" : "Memoriavirtual_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Memoriavirtual_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Memoriavirtual_autogen_timestamp_deps-Debug-0dc94cde4d492aac3b7c.json",
+					"name" : "Memoriavirtual_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug",
+		"source" : "/home/jagomez/Desktop/Memoriavirtual/Memoriavirtual"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

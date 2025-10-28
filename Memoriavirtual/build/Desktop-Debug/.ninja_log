@@ -1,0 +1,10 @@
+# ninja log v5
+12	68	0	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/cmake.verify_globs	fd3066675fa971ed
+68	930	1760414346995140340	Memoriavirtual_autogen/timestamp	311269752c3d4977
+68	930	1760414346995140340	Memoriavirtual_autogen/mocs_compilation.cpp	311269752c3d4977
+68	930	1760414346995140340	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/Memoriavirtual_autogen/timestamp	311269752c3d4977
+68	930	1760414346995140340	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/Memoriavirtual_autogen/mocs_compilation.cpp	311269752c3d4977
+930	2987	1760414349073008756	CMakeFiles/Memoriavirtual.dir/Memoriavirtual_autogen/mocs_compilation.cpp.o	6cde577293ed0136
+931	3124	1760414349212000288	CMakeFiles/Memoriavirtual.dir/principal.cpp.o	dfbb5b0e27636e5e
+930	3132	1760414349220999740	CMakeFiles/Memoriavirtual.dir/main.cpp.o	5e07231d57f7e027
+3133	3336	1760414349423730060	Memoriavirtual	f90e09ad70b6ca8a

@@ -1,0 +1,18 @@
+# ninja log v5
+269	1036	1760500729746154052	CMakeFiles/Memoriavirtual.dir/simulations/scheduling/scheduler.cpp.o	f08db15a184a2f25
+234	717	1760506536690313048	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/Memoriavirtual_autogen/mocs_compilation.cpp	e5a9ea027a0be15b
+269	984	1760500729696156031	CMakeFiles/Memoriavirtual.dir/Memoriavirtual_autogen/mocs_compilation.cpp.o	d89eff01384e2e68
+234	717	1760506536690313048	Memoriavirtual_autogen/mocs_compilation.cpp	e5a9ea027a0be15b
+113	1162	1760502399369705052	CMakeFiles/Memoriavirtual.dir/widgets/scheduletimelinewidget.cpp.o	3a0c16df7b53ad53
+234	717	1760506536690313048	Memoriavirtual_autogen/timestamp	e5a9ea027a0be15b
+6	227	0	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/cmake.verify_globs	fd3066675fa971ed
+38	45	0	CMakeFiles/clean.additional	ef993b15a92b8f11
+45	48	0	clean	a31eedcededa8236
+24	86	1760500690213720659	build.ninja	56652a7059e7362b
+270	799	1760500729505163594	CMakeFiles/Memoriavirtual.dir/simulations/concurrency/semaphorescenarios.cpp.o	165c7f1249a0378b
+270	905	1760500729602159753	CMakeFiles/Memoriavirtual.dir/simulations/memory/virtualmemory.cpp.o	4dd9ba18d1f88b5d
+234	717	1760506536690313048	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/Memoriavirtual_autogen/timestamp	e5a9ea027a0be15b
+734	3261	1760506539273208670	CMakeFiles/Memoriavirtual.dir/principal.cpp.o	810799a87b62c9db
+3261	3497	1760506539507199215	Memoriavirtual	fb3b46a8a20a0c64
+269	964	1760500729639158288	CMakeFiles/Memoriavirtual.dir/main.cpp.o	a66f95da393c1ec
+9	49	0	/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/cmake.verify_globs	fd3066675fa971ed

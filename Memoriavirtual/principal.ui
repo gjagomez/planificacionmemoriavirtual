@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>principal</class>
+ <widget class="QMainWindow" name="principal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>934</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simulador de Algoritmos de Planificacion, Semaforos e Interfaz OE con Laboratorios de Memoria Virtual en Linux</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="schedulingTab">
+       <attribute name="title">
+        <string notr="true">Planificacion CPU</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="schedulingLayout">
+        <item>
+         <layout class="QHBoxLayout" name="controlBarLayout">
+          <item>
+           <widget class="QLabel" name="algorithmLabel">
+            <property name="text">
+             <string>Algoritmo:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="algorithmCombo"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="quantumLabel">
+            <property name="text">
+             <string>Quantum:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="quantumSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addProcessButton">
+            <property name="text">
+             <string>Agregar proceso</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="removeProcessButton">
+            <property name="text">
+             <string>Eliminar seleccion</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="loadSampleButton">
+            <property name="text">
+             <string>Escenario ejemplo</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="clearProcessesButton">
+            <property name="text">
+             <string>Limpiar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="controlSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="priorityNoteLabel">
+            <property name="text">
+             <string>Prioridad baja = mayor prioridad</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="schedulingFrame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="schedulingMainLayout">
+           <item>
+            <widget class="QFrame" name="scenarioPanel">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QVBoxLayout" name="scenarioLayout">
+              <item>
+               <widget class="QLabel" name="scenarioTitleLabel">
+                <property name="text">
+                 <string>Escenario</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="processTable">
+                <property name="editTriggers">
+                 <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectRows</enum>
+                </property>
+                <property name="columnCount">
+                 <number>4</number>
+                </property>
+                <column/>
+                <column/>
+                <column/>
+                <column/>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="scenarioButtonsLayout">
+                <item>
+                 <widget class="QPushButton" name="loadScenarioButton">
+                  <property name="text">
+                   <string>Cargar...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveScenarioButton">
+                  <property name="text">
+                   <string>Guardar</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="automaticCheck">
+                <property name="text">
+                 <string>Automatico</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="startScenarioButton">
+                <property name="text">
+                 <string>Iniciar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logTitleLabel">
+                <property name="text">
+                 <string>Registro</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QListWidget" name="logListWidget"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="timelinePanel">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QVBoxLayout" name="timelineLayout">
+              <item>
+               <widget class="QLabel" name="timelineHeadingLabel">
+                <property name="text">
+                 <string>Linea de tiempo</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="ScheduleTimelineWidget" name="timelineWidget" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="metricsPanel">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QVBoxLayout" name="metricsLayout">
+              <item>
+               <widget class="QFrame" name="waitCard">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="waitCardLayout">
+                 <item>
+                  <widget class="QLabel" name="waitingLabel">
+                   <property name="text">
+                    <string>Tiempo de espera</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="waitingValueLabel">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="margin">
+                    <number>4</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="turnaroundCard">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="turnaroundCardLayout">
+                 <item>
+                  <widget class="QLabel" name="turnaroundLabel">
+                   <property name="text">
+                    <string>Tiempo de retorno</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="turnaroundValueLabel">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="responseCard">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="responseCardLayout">
+                 <item>
+                  <widget class="QLabel" name="responseLabel">
+                   <property name="text">
+                    <string>Tiempo de respuesta</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="responseValueLabel">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="cpuCard">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="cpuCardLayout">
+                 <item>
+                  <widget class="QLabel" name="cpuLabel">
+                   <property name="text">
+                    <string>Uso de CPU</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="cpuValueLabel">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="metricsSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="exportLayout">
+          <item>
+           <spacer name="exportSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exportCsvButton">
+            <property name="text">
+             <string>Exportar a CSV</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exportImageButton">
+            <property name="text">
+             <string>Exportar a imagen</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="concurrencyTab">
+       <attribute name="title">
+        <string>Concurrencia</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="concurrencyLayout">
+        <item>
+         <layout class="QHBoxLayout" name="concurrencyHeaderLayout">
+          <item>
+           <widget class="QLabel" name="scenarioLabel">
+            <property name="text">
+             <string>Escenario:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="scenarioCombo"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="runScenarioButton">
+            <property name="text">
+             <string>Simular</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="concurrencyHeaderSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="scenarioGrid">
+          <item row="0" column="0">
+           <widget class="QLabel" name="producerLabel">
+            <property name="text">
+             <string>Productores:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="producerSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="consumerLabel">
+            <property name="text">
+             <string>Consumidores:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QSpinBox" name="consumerSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="bufferLabel">
+            <property name="text">
+             <string>Tamano buffer:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="bufferSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>64</number>
+            </property>
+            <property name="value">
+             <number>5</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="cycleLabel">
+            <property name="text">
+             <string>Ciclos:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QSpinBox" name="cycleSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>20</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="readerLabel">
+            <property name="text">
+             <string>Lectores:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="readerSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="writerLabel">
+            <property name="text">
+             <string>Escritores:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QSpinBox" name="writerSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="chairsLabel">
+            <property name="text">
+             <string>Sillas:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="chairsSpin">
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="customersLabel">
+            <property name="text">
+             <string>Clientes:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QSpinBox" name="customersSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>40</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="concurrencyTable">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::NoSelection</enum>
+          </property>
+          <property name="columnCount">
+           <number>4</number>
+          </property>
+          <column/>
+          <column/>
+          <column/>
+          <column/>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="concurrencySummaryLabel">
+          <property name="text">
+           <string>Pasos generados: 0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="memoryTab">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <attribute name="title">
+        <string>Memoria Virtual</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="memoryLayout">
+        <item>
+         <layout class="QGridLayout" name="memoryInputGrid">
+          <item row="0" column="0">
+           <widget class="QLabel" name="referenceLabel">
+            <property name="text">
+             <string>Referencias (espacio o coma):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="3">
+           <widget class="QLineEdit" name="referenceLine"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="framesLabel">
+            <property name="text">
+             <string>Marcos:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="framesSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>12</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="tlbLabel">
+            <property name="text">
+             <string>Entradas TLB:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QSpinBox" name="tlbSpin">
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>12</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="policyLabel">
+            <property name="text">
+             <string>Politica:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="policyCombo"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QPushButton" name="sampleReferenceButton">
+            <property name="text">
+             <string>Cargar ejemplo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="runMemoryButton">
+            <property name="text">
+             <string>Simular</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="memoryTable">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::NoSelection</enum>
+          </property>
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <column/>
+          <column/>
+          <column/>
+          <column/>
+          <column/>
+          <column/>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="memorySummaryLabel">
+          <property name="text">
+           <string>Fallos de pagina: 0 | TLB hits: 0 (0%)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="dataTab">
+       <attribute name="title">
+        <string>Datos/Escenarios</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="dataLayout">
+        <item>
+         <widget class="QLabel" name="dataPlaceholderLabel">
+          <property name="text">
+           <string>Anade aqui materiales adicionales o documentacion del laboratorio.</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ScheduleTimelineWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets/scheduletimelinewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

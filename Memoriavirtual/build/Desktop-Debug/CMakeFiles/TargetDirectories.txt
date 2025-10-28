@@ -1,0 +1,9 @@
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/Memoriavirtual.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/install.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/Memoriavirtual_autogen_timestamp_deps.dir
+/home/jagomez/Desktop/Memoriavirtual/build/Desktop-Debug/CMakeFiles/Memoriavirtual_autogen.dir
